@@ -205,4 +205,4 @@ st_autorefresh = st.experimental_get_query_params().get("autorefresh", None)
 # naive loop: use sleep and rerun via st.experimental_rerun; but Streamlit has st.experimental_singleton caching.
 # Use Streamlit's built-in rerun mechanism via a short delay:
 time.sleep(refresh_seconds := int(refresh_seconds) if isinstance((refresh_seconds := refresh_seconds), int) else REFRESH_SECONDS)
-st.rerun()
+st.experimental_rerun()
